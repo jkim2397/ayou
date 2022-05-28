@@ -20,14 +20,14 @@ soup = BeautifulSoup(res.text, "lxml")
 cartoonsBox = soup.find('ol', attrs={"class": "asideBoxRank"}) 
 cartoons = cartoonsBox.find_all('a') 
 
-i = 1
-
 for cartoon in cartoons: 
+  
   title = cartoon.get("title") 
-  print(f"{str(i)}위: {title}")
+  
+  
+  i=int(input("순위를 입력하세요 :"))
   data = [str(i), title]
   writer.writerow(data)
-  i += 1
-
+  print(cartoons[i-1].get_text())
 
 
