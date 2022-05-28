@@ -24,10 +24,13 @@ for cartoon in cartoons:
   
   title = cartoon.get("title") 
   
-  
-  i=int(input("순위를 입력하세요 :"))
+i=0
+for cartoon in cartoons: 
+  title = cartoon.get("title") 
+  print(f"{str(i)}위: {title}")
   data = [str(i), title]
   writer.writerow(data)
-  print(cartoons[i-1].get_text())
+  i += 1
+
 
 
